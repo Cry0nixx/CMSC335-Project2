@@ -10,21 +10,36 @@
  */
 package shapes;
 
-import javax.swing.ImageIcon;
 import java.awt.Graphics;
 import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public abstract class Shape implements Serializable {
 
     public final int numberOfDimensions;
-    public ImageIcon shapeImage;
+    private final Map<String, Double> attributes = new LinkedHashMap<>();
 
     Shape(int numberOfDimensions) {
         this.numberOfDimensions = numberOfDimensions;
     }
 
-    public void draw(Graphics graphics) {
-        graphics.drawImage(shapeImage.getImage(),  0,  0,  null);
+    public abstract void draw(Graphics graphics);
+
+    public double addAttribute(String attributeName, double attributeValue) {
+        if (attributeName != null && !attributeName.isBlank()) {
+            attributes.put(attributeName, attributeValue);
+        }
+        return attributeValue;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder attributesString = new StringBuilder();
+        for (Map.Entry<String, Double> entry : attributes.entrySet()) {
+            attributesString.append("\n").append(entry.getKey()).append(": ").append(entry.getValue());
+        }
+        return this.getClass().getSimpleName() + attributesString;
     }
 
 }

@@ -15,7 +15,7 @@ public class Circle extends TwoDimensionalShape {
     private final double radius;
 
     public Circle(double radius) {
-        this.radius = radius;
+        this.radius = addAttribute("Radius", radius);
     }
 
     @Override
@@ -28,8 +28,4 @@ public class Circle extends TwoDimensionalShape {
         graphics.fillOval(0, 0, (int) (radius * 2.5), (int) (radius * 2.5));
     }
 
-    @Override
-    public String toString() {
-        return "Circle\nRadius: " + radius + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
-    }
 }

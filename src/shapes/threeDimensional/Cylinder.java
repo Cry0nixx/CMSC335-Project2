@@ -9,20 +9,15 @@ package shapes.threeDimensional;
 
 import shapes.ThreeDimensionalShape;
 
-import javax.swing.ImageIcon;
-import java.awt.Image;
-
-public class Cylinder extends ThreeDimensionalShape {
+public class  Cylinder extends ThreeDimensionalShape {
 
     private final double radius;
     private final double height;
 
     public Cylinder(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
-        shapeImage = new ImageIcon("src/images/cylinder.png");
-        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH));
-
+        super("cylinder.png");
+        this.height = addAttribute("Height", height);
+        this.radius = addAttribute("Radius", radius);
     }
 
     @Override
@@ -30,9 +25,4 @@ public class Cylinder extends ThreeDimensionalShape {
         return Math.PI * radius * radius * height;
     }
 
-    @Override
-    public String toString() {
-        return "Cylinder\nRadius: " + radius + "\nHeight: " +
-                height + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
-    }
 }

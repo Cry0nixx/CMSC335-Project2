@@ -16,8 +16,8 @@ public class Triangle extends TwoDimensionalShape {
     private final double height;
 
     public Triangle(double base, double height) {
-        this.base = base;
-        this.height = height;
+        this.base = addAttribute("Base", base);
+        this.height = addAttribute("Height", height);
     }
 
     @Override
@@ -32,9 +32,4 @@ public class Triangle extends TwoDimensionalShape {
         graphics.fillPolygon(x, y, 3);
     }
 
-
-    @Override
-    public String toString() {
-        return "Triangle\nBase: " + base + "\nHeight: " + height + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
-    }
 }

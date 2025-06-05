@@ -9,26 +9,18 @@ package shapes.threeDimensional;
 
 import shapes.ThreeDimensionalShape;
 
-import javax.swing.ImageIcon;
-import java.awt.Image;
-
 public class Cube extends ThreeDimensionalShape {
 
-    private final double side;
+    private final double sidesLength;
 
-    public Cube(double side) {
-        this.side = side;
-        shapeImage = new ImageIcon("src/images/cube.png");
-        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH));
+    public Cube(double sidesLength) {
+        super("cube.png");
+        this.sidesLength = addAttribute("Sides Length", sidesLength);
     }
 
     @Override
     public double getVolume() {
-        return side * side * side;
+        return sidesLength * sidesLength * sidesLength;
     }
 
-    @Override
-    public String toString() {
-        return "Cube\nSides Length: " + side + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
-    }
 }

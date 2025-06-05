@@ -16,8 +16,8 @@ public class Rectangle extends TwoDimensionalShape {
     private final double width;
 
     public Rectangle(double length, double width) {
-        this.length = length;
-        this.width = width;
+        this.length = addAttribute("Length", length);
+        this.width = addAttribute("Width", width);
     }
 
     @Override
@@ -30,9 +30,4 @@ public class Rectangle extends TwoDimensionalShape {
         graphics.fillRect(0, 0, (int) (length * 2.5), (int) (width * 2.5));
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle\nLength: " + length + "\nWidth: " +
-                width + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
-    }
 }

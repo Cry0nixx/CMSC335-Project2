@@ -15,4 +15,10 @@ public abstract class TwoDimensionalShape extends Shape {
     }
 
     public abstract double getArea();
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nArea: " + (Math.round(getArea() * 1000.0) / 1000.0);
+    }
+
 }

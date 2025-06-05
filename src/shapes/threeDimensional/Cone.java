@@ -9,19 +9,15 @@ package shapes.threeDimensional;
 
 import shapes.ThreeDimensionalShape;
 
-import javax.swing.ImageIcon;
-import java.awt.Image;
-
 public class Cone extends ThreeDimensionalShape {
 
     private final double radius;
     private final double height;
 
     public Cone(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
-        shapeImage = new ImageIcon("src/images/cone.png");
-        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH));
+        super("cone.png");
+        this.radius = addAttribute("Radius", radius);
+        this.height = addAttribute("Height", height);
     }
 
     @Override
@@ -29,9 +25,4 @@ public class Cone extends ThreeDimensionalShape {
         return (1.0 / 3.0) * Math.PI * radius * radius * height;
     }
 
-    @Override
-    public String toString() {
-        return "Cone\nRadius: " + radius + "\nHeight: " +
-                height + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
-    }
 }

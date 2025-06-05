@@ -8,12 +8,29 @@
  */
 package shapes;
 
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import java.awt.Graphics;
+
 public abstract class ThreeDimensionalShape extends Shape {
 
-    public ThreeDimensionalShape() {
+    public ImageIcon shapeImage;
+
+    public ThreeDimensionalShape(String imageName) {
         super(3);
+        shapeImage = new ImageIcon("src/images/" + imageName);
+        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH));
     }
 
     public abstract double getVolume();
+
+    public void draw(Graphics graphics) {
+        graphics.drawImage(shapeImage.getImage(),  0,  0,  null);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nVolume: " + (Math.round(getVolume() * 1000.0) / 1000.0);
+    }
 
 }

@@ -12,24 +12,20 @@ import java.awt.Graphics;
 
 public class Square extends TwoDimensionalShape {
 
-    private final double side;
+    private final double sidesLength;
 
-    public Square(double side) {
-        this.side = side;
+    public Square(double sidesLength) {
+        this.sidesLength = addAttribute("Sides Length", sidesLength);
     }
 
     @Override
     public double getArea() {
-        return side * side;
+        return sidesLength * sidesLength;
     }
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.fillRect(0, 0, (int) (side * 2.5), (int) (side * 2.5));
+        graphics.fillRect(0, 0, (int) (sidesLength * 2.5), (int) (sidesLength * 2.5));
     }
 
-    @Override
-    public String toString() {
-        return "Square\nSides Length: " + side + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
-    }
 }
