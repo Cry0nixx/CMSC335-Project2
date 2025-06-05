@@ -32,6 +32,7 @@ public class Cylinder extends ThreeDimensionalShape {
 
     @Override
     public String toString() {
-        return "Cylinder\nRadius: " + radius + "\nHeight: " + height + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
+        return "Cylinder\nRadius: " + radius + "\nHeight: " +
+                height + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
     }
 }

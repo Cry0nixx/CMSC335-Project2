@@ -32,6 +32,7 @@ public class Rectangle extends TwoDimensionalShape {
 
     @Override
     public String toString() {
-        return "Rectangle\nLength: " + length + "\nWidth: " + width + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
+        return "Rectangle\nLength: " + length + "\nWidth: " +
+                width + "\nArea: " + Math.round(getArea() * 1000.0) / 1000.0;
     }
 }

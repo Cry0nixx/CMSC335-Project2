@@ -21,7 +21,7 @@ public class Torus extends ThreeDimensionalShape {
         this.innerRadius = innerRadius;
         this.outerRadius = outerRadius;
         shapeImage = new ImageIcon("src/images/torus.png");
-        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(500, 350, Image.SCALE_SMOOTH));
+        shapeImage = new ImageIcon(shapeImage.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH));
     }
 
     @Override
@@ -31,6 +31,7 @@ public class Torus extends ThreeDimensionalShape {
 
     @Override
     public String toString() {
-        return "Torus\nInner Radius: " + innerRadius + "\nOuter Radius: " + outerRadius + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
+        return "Torus\nInner Radius: " + innerRadius + "\nOuter Radius: " +
+                outerRadius + "\nVolume: " + Math.round(getVolume() * 1000.0) / 1000.0;
     }
 }

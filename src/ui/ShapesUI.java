@@ -25,7 +25,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import shapes.*;
+import shapes.Shape;
 import shapes.threeDimensional.*;
 import shapes.twoDimensional.*;
 
