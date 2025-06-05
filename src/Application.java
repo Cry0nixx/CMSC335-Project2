@@ -13,6 +13,4 @@ public class Application {
         new ShapesUI().setVisible(true);
     }
 
-
-
 }

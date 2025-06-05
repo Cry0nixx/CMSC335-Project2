@@ -16,6 +16,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 import javax.swing.JButton;
@@ -28,7 +29,6 @@ import shapes.*;
 import shapes.threeDimensional.*;
 import shapes.twoDimensional.*;
 
-import ui.panels.DrawingPanel;
 import ui.panels.ShapeDisplayPanel;
 import utils.MenuEntry;
 import utils.MenuEntryUI;
@@ -185,7 +185,7 @@ public class ShapesUI extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent ignored) {
-        final String key = shapeChoices.getSelectedItem().toString();
+        final String key = Objects.requireNonNull(shapeChoices.getSelectedItem()).toString();
         createShape(key, suppliers.get(key));
     }
 
